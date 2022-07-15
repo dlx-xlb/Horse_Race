@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2020 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- App name -->
+    <string name="app_name">Horse Racing</string>
+
+    <!-- Hint text for editable text field where the user enters the cost of service -->
+    <string name="wager">下注上限 10 USD</string>
+
+    <!-- Question prompt for the group of radio buttons with different tip options -->
+    <string name="which_horse_you_want_to_wager">您想下注第幾號馬?</string>
+
+    <!-- Tip option for amazing service which uses 20% to calculate the tip  -->
+    <string name="first_horse">第一號馬 (當前賠率為 %s)</string>
+
+    <!-- Tip option for good service which uses 18% to calculate the tip  -->
+    <string name="second_horse">第二號馬 (當前賠率為 %s)</string>
+
+    <string name="third_horse">第三號馬 (當前賠率為 %s)</string>
+
+    <!-- Tip option for okay service which uses 16% to calculate the tip  -->
+    <string name="fourth_horse">第四號馬 (當前賠率為 %s)</string>
+
+    <!-- Text label for toggle switch that asks the user if they want to round up the tip  -->
+    <string name="round_up_tip">Round up tip?</string>
+
+    <!-- Label for button that calculates the tip  -->
+    <string name="race">開始比賽</string>
+
+    <string name="history">歷史紀錄</string>
+
+    <string name="exchangeNTD">換算為台幣為  %s NTD</string>
+
+    <!-- Formatted string for the tip result  -->
+    <string name="total">目前您的賭金總金額為  %s NTD</string>
+</resources>

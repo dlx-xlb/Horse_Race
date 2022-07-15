@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2020 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- Layout for the tip calculator -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.HorseRacing.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/icon_wager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/wager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/wager"
+            app:srcCompat="@drawable/ic_wager" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wager"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="@string/wager"
+            app:layout_constraintStart_toEndOf="@id/icon_wager"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/wager_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textSize="12sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/convert_to_NTD"
+            style="@style/Widget.HorseRacing.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/wager"
+            app:layout_constraintStart_toEndOf="@id/wager"
+            app:layout_constraintTop_toTopOf="@id/wager"
+            tools:text="換算為台幣為  300 NTD" />
+
+
+        <ImageView
+            android:id="@+id/icon_wager_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/wager_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/wager_question"
+            app:srcCompat="@drawable/ic_horse_option" />
+
+        <TextView
+            android:id="@+id/wager_question"
+            style="@style/Widget.HorseRacing.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/which_horse_you_want_to_wager"
+            app:layout_constraintStart_toStartOf="@id/wager"
+            app:layout_constraintTop_toBottomOf="@id/wager" />
+
+        <RadioGroup
+            android:id="@+id/horse_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/first_horse_option"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/wager_question"
+            app:layout_constraintTop_toBottomOf="@id/wager_question">
+
+            <RadioButton
+                android:id="@+id/first_horse_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="第一號馬 (當前賠率為 2)"
+                android:text="@string/first_horse" />
+
+            <RadioButton
+                android:id="@+id/second_horse_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="第二號馬 (當前賠率為 2)"
+                android:text="@string/second_horse" />
+
+            <RadioButton
+                android:id="@+id/third_horse_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="第三號馬 (當前賠率為 2)"
+                android:text="@string/third_horse" />
+
+            <RadioButton
+                android:id="@+id/fourth_horse_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="第四號馬 (當前賠率為 2)"
+                android:text="@string/fourth_horse" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/race_button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/race"
+            app:layout_constraintEnd_toStartOf="@id/history"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp"
+            app:layout_constraintTop_toBottomOf="@id/horse_options" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/race_button"
+            app:layout_constraintBottom_toBottomOf="@id/race_button"
+            android:layout_marginEnd="40dp"
+            android:id="@+id/history"
+            android:text="@string/history"/>
+
+
+
+        <TextView
+            android:id="@+id/total_wager"
+            style="@style/Widget.HorseRacing.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/race_button"
+            tools:text="@string/total"
+            android:text="目前您的賭金總金額為  10000 NTD"/>
+
+        <ProgressBar
+            android:layout_width="0dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/horse1"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/total_wager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:max="100"
+            />
+
+        <ProgressBar
+            android:layout_width="0dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/horse2"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/horse1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:max="100"
+            />
+
+        <ProgressBar
+            android:layout_width="0dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/horse3"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/horse2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:max="100"
+            />
+
+        <ProgressBar
+            android:layout_width="0dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/horse4"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/horse3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:max="100"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
